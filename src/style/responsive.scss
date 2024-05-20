@@ -1,0 +1,42 @@
+/* ********************************************************************************************
+    Design for a width of 1200px and above
+*********************************************************************************************** */
+
+@media (width >= 1200px) {
+    .h3, h3 {
+        font-size: 1.625rem;
+    }
+}
+
+/* ********************************************************************************************
+    Design for a width of 767px and below
+*********************************************************************************************** */
+  
+@media only screen and (width <= 767px) {
+    body {
+        font-size: 1rem;
+    }
+
+    .h3, h3 {
+        font-size: calc(1.35rem + .6vw);
+    }
+
+    .btn-lg {
+        padding: 0.5625rem 1rem;
+    }
+
+    .auth-box {
+        .login-logo {
+            height: 2.125rem;
+        }
+
+        .card-body {
+            padding: 1.25rem;
+        }
+    }
+
+    .form-control-lg {
+        font-size: 1rem;
+        min-height: calc(1.5em + 1rem + var(--bs-border-width) * 2);
+    }
+}

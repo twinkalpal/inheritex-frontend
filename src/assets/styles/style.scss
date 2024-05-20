@@ -1,0 +1,922 @@
+// * {
+// 	padding: 0;
+// 	margin: 0;
+// }
+// body {
+// 	font-family: 'Poppins', sans-serif;
+// }
+
+// @layer utilities {
+// 	.border {
+// 		border-width: 0.0625rem;
+// 	}
+// 	.sidebar {
+// 		.active {
+// 			background-color: theme('colors.primary');
+// 			color: white;
+// 			font-weight: 500;
+// 		}
+// 	}
+// 	.input-box-shadow {
+// 		box-shadow: 0rem 0.0625rem 0.125rem 0rem rgba(16, 24, 40, 0.05);
+// 	}
+// 	.custom-box-shadow {
+// 		box-shadow: 0rem 0rem 0rem 0.25rem theme('colors.lightwhite');
+// 	}
+// 	.form-box-shadow {
+// 		box-shadow: 0rem 0.25rem 0.375rem -0.125rem theme('colors.gray900');
+// 	}
+// 	.custom-height {
+// 		height: calc(100vh - 4.375rem);
+// 		min-height: calc(100vh - 4.375rem);
+// 		overflow-y: auto;
+// 	}
+// 	.custom-width {
+// 		width: calc(100vw - 15.625rem);
+// 	}
+// 	.custom-width-small {
+// 		width: calc(100vw - 4.125rem);
+// 	}
+// 	.custom-height::-webkit-scrollbar {
+// 		display: none;
+// 	}
+// 	.custom-selectbox {
+// 		position: relative;
+// 		.css-1u9des2-indicatorSeparator {
+// 			width: 0;
+// 		}
+// 		.css-t3ipsp-control:hover {
+// 			border-color: theme('colors.primary');
+// 		}
+// 		.css-t3ipsp-control {
+// 			border: 0.063rem;
+// 			border-color: theme('colors.primary');
+// 			box-shadow: 0rem 0rem 0rem 0.063rem theme('colors.primary');
+// 		}
+// 		.css-1nmdiq5-menu {
+// 			position: absolute;
+// 			z-index: 22;
+// 		}
+// 	}
+// 	.custom-table {
+// 		.MuiDataGrid-columnHeaders {
+// 			background-color: theme('colors.darkblue');
+// 			position: sticky;
+// 			border-radius: 0;
+// 			color: white;
+// 			.MuiDataGrid-columnHeaderTitleContainerContent {
+// 				font-weight: 500;
+// 				font-size: 0.938rem;
+// 				line-height: 1.5rem;
+// 				.MuiDataGrid-columnHeaderTitle {
+// 					font-size: 0.938rem;
+// 					font-weight: 500;
+// 					line-height: 1.5rem;
+// 					color: white;
+// 				}
+// 			}
+// 			:hover {
+// 				.MuiDataGrid-iconButtonContainer {
+// 					display: none;
+// 				}
+// 				.MuiDataGrid-menuIcon {
+// 					display: none;
+// 				}
+// 				.MuiDataGrid-columnSeparator {
+// 					display: none;
+// 				}
+// 				.MuiDataGrid-columnHeaderDraggableContainer {
+// 					width: auto;
+// 				}
+// 				.MuiDataGrid-columnSeparator--sideRight {
+// 					display: none;
+// 				}
+// 			}
+// 		}
+// 		.MuiDataGrid-columnHeaderCheckbox {
+// 			.MuiCheckbox-root {
+// 				.MuiSvgIcon-root {
+// 					fill: theme('colors.darkgray');
+// 				}
+// 			}
+// 			.MuiCheckbox-root.Mui-checked {
+// 				.MuiSvgIcon-root {
+// 					fill: theme('colors.lightgreen100');
+// 				}
+// 			}
+// 		}
+// 		.MuiDataGrid-cellCheckbox {
+// 			.MuiCheckbox-root {
+// 				.MuiSvgIcon-root {
+// 					fill: theme('colors.darkgray');
+// 				}
+// 			}
+// 			.MuiCheckbox-root.Mui-checked {
+// 				.MuiSvgIcon-root {
+// 					fill: theme('colors.lightgreen100');
+// 				}
+// 			}
+// 		}
+// 		.css-ptkaw2-MuiDataGrid-root {
+// 			.MuiDataGrid-row {
+// 				.Mui-selected {
+// 					background-color: theme('colors.lightwhite300') !important;
+// 				}
+// 				:not(.MuiDataGrid-row--dynamicHeight) > .MuiDataGrid-cell {
+// 					overflow: auto !important;
+// 				}
+// 			}
+// 		}
+// 		.MuiDataGrid-row {
+// 			// min-height: 3.5rem !important;
+// 			// max-height: 3.5rem !important;
+// 			.MuiDataGrid-withBorderColor {
+// 				border-color: theme('colors.lightwhite100');
+// 			}
+// 			.Mui-selected {
+// 				background-color: theme('colors.lightwhite300') !important;
+// 			}
+// 		}
+// 		.MuiDataGrid-cell {
+// 			// min-height: 3.5rem !important;
+// 			// max-height: 3.5rem !important;
+// 			&:focus {
+// 				outline: none !important;
+// 			}
+// 		}
+// 		//hide table footer
+// 		.MuiDataGrid-footerContainer {
+// 			display: none;
+// 			.MuiTablePagination-root {
+// 				display: none;
+// 			}
+// 		}
+// 		// select box option visible
+// 		.MuiDataGrid-row:not(.MuiDataGrid-row--dynamicHeight) > .MuiDataGrid-cell {
+// 			overflow: visible !important;
+// 		}
+
+// 		&:hover {
+// 			.MuiDataGrid-columnSeparator {
+// 				visibility: hidden !important;
+// 			}
+// 		}
+// 	}
+// 	.css-ptkaw2-MuiDataGrid-root
+// 		.custom-action-cell-container
+// 		.MuiDataGrid-row:not(.MuiDataGrid-row--dynamicHeight)
+// 		> .MuiDataGrid-cell.custom-action-cell-content {
+// 		overflow: visible;
+// 		white-space: nowrap;
+// 	}
+
+// 	.custom-box {
+// 		appearance: none;
+// 		-webkit-appearance: none; // Webkit browsers
+// 		-moz-appearance: none; // Firefox
+
+// 		&::before {
+// 			content: '';
+// 			display: inline-block;
+// 			width: 1rem;
+// 			height: 1rem;
+// 			background-color: white; // Change background color when checked
+// 			border: 0.063rem solid theme('colors.gray500'); // Change border color when checked
+// 			border-radius: 0.25rem; // Adjust border radius if needed
+// 			vertical-align: middle;
+// 			margin-right: 0.3rem; // Adjust spacing between checkbox and label
+// 		}
+
+// 		&:checked::before {
+// 			content: '\2714'; // Unicode checkmark symbol
+// 			color: white;
+// 			background-color: theme('colors.primary'); // Change background color when checked
+// 			border: 0.063rem solid theme('colors.primary'); // Change color of checkmark when checked
+// 			font-size: 0.75rem; // Adjust font size of checkmark if needed
+// 			line-height: 1; // Adjust line height of checkmark if needed
+// 			text-align: center; // Center align the checkmark
+// 		}
+// 	}
+// 	.loader {
+// 		border: 0.25rem solid transparent;
+// 		border-radius: 50%;
+// 		border-top: 0.25rem solid white;
+// 		border-right: 0.25rem solid white;
+// 		border-bottom: 0.25rem solid white;
+// 		width: 1.5rem;
+// 		height: 1.5rem;
+// 		-webkit-animation: spin 2s linear infinite;
+// 		animation: spin 2s linear infinite;
+// 	}
+// 	@-webkit-keyframes spin {
+// 		0% {
+// 			-webkit-transform: rotate(0deg);
+// 		}
+// 		100% {
+// 			-webkit-transform: rotate(360deg);
+// 		}
+// 	}
+// 	@keyframes spin {
+// 		0% {
+// 			transform: rotate(0deg);
+// 		}
+// 		100% {
+// 			transform: rotate(360deg);
+// 		}
+// 	}
+// 	.dashboard-datepicker {
+// 		.MuiTextField-root {
+// 			width: 9.375rem;
+// 			height: 2.25rem;
+// 			.MuiInputLabel-root {
+// 				font-size: 0.8rem;
+// 				line-height: 1.313rem;
+// 				color: theme('colors.gray500');
+// 			}
+// 			.MuiInputBase-root {
+// 				.MuiOutlinedInput-input {
+// 					padding: 0.59inrem 0.875rem;
+// 					font-size: 0.8rem;
+// 					color: theme('colors.gray500');
+// 				}
+// 				.MuiOutlinedInput-notchedOutline {
+// 					border-color: theme('colors.gray50');
+// 				}
+// 				.MuiButtonBase-root {
+// 					color: theme('colors.gray50');
+// 				}
+// 				&:hover {
+// 					.MuiOutlinedInput-notchedOutline {
+// 						border-color: theme('colors.gray50');
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.sales-datepicker {
+// 		.MuiTextField-root {
+// 			width: 9.438rem;
+// 			height: 2.25rem;
+// 			.MuiInputLabel-root {
+// 				font-size: 0.8rem;
+// 				line-height: 1.313rem;
+// 				color: theme('colors.primary');
+// 			}
+// 			.MuiInputBase-root {
+// 				background-color: theme('colors.white');
+// 				.MuiOutlinedInput-input {
+// 					padding: 0.44rem 0.875rem 0.5rem 0.875rem;
+// 					font-size: 0.875rem;
+// 					color: theme('colors.primary');
+// 				}
+// 				.MuiOutlinedInput-notchedOutline {
+// 					border-color: theme('colors.primary');
+// 				}
+// 				.MuiButtonBase-root {
+// 					color: theme('colors.primary');
+// 				}
+// 				&:hover {
+// 					.MuiOutlinedInput-notchedOutline {
+// 						border-color: theme('colors.primary');
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.active-page-button {
+// 		width: 1.75rem;
+// 		height: 1.75rem;
+// 		background-color: theme('colors.primary');
+// 		border-radius: 50%;
+// 		font-size: 0.938rem;
+// 		font-weight: 500;
+// 		line-height: 1.189rem;
+// 		color: white;
+// 		letter-spacing: 10%;
+// 	}
+// 	.custom-body {
+// 		height: calc(100vh - 6.693rem);
+// 		min-height: calc(100vh - 6.693rem);
+// 		overflow-y: auto;
+// 	}
+// 	.custom-body::-webkit-scrollbar {
+// 		display: none;
+// 	}
+// 	.inner-body {
+// 		height: calc(100vh - 14.3rem);
+// 		min-height: calc(100vh - 14.3rem);
+// 		overflow-y: auto;
+// 	}
+// 	.inner-body::-webkit-scrollbar {
+// 		display: none;
+// 	}
+// 	.edit-icon {
+// 		border-radius: 0.5rem;
+// 		padding: 0.5rem 0.875rem;
+// 		border: 0.063rem solid theme('colors.indigo25');
+// 		background-color: theme('colors.indigo25');
+// 		color: theme('colors.primary');
+// 		font-weight: 600;
+// 		font-size: 0.875rem;
+// 		line-height: 1.25rem;
+// 	}
+// 	.custom-menu {
+// 		display: flex;
+// 		padding: 0.625rem 0.938rem 0.625rem 0.625rem;
+// 		font-size: 0.875rem;
+// 		background-color: white;
+// 		border-bottom: 0.063rem solid theme('colors.lightgray700');
+// 		border-top: 0 solid transparent;
+// 		border-left: 0 solid transparent;
+// 		border-right: 0 solid transparent;
+// 		border-radius: 0;
+// 		font-weight: 400;
+// 		cursor: pointer;
+// 	}
+// 	.custom-modal {
+// 		position: absolute;
+// 		top: 50%;
+// 		left: 50%;
+// 		transform: translate(-50%, -50%);
+// 		background-color: white;
+// 		border-radius: 1rem;
+// 		box-shadow: 0rem 0rem 0rem 0.25rem theme('colors.lightgray500');
+// 		border: 0;
+// 		border-color: transparent;
+// 		padding: 1.875rem;
+// 		&:focus-visible {
+// 			outline: none;
+// 		}
+// 		// .modal-body {
+// 		// 	height: calc(100vh - 18.75rem);
+// 		// 	min-height: calc(100vh - 18.75rem);
+// 		// 	overflow-y: scroll;
+// 		// }
+// 	}
+// 	.cancel-btn {
+// 		border-color: theme('colors.gray300');
+// 		background-color: white;
+// 		color: theme('colors.darkgray100');
+// 		width: 10.625rem;
+// 		justify-content: center;
+// 	}
+// 	.save-btn {
+// 		width: 10.625rem;
+// 		justify-content: center;
+// 	}
+
+// 	.custom-accordian {
+// 		.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+// 			min-height: 3rem;
+// 		}
+// 		.MuiAccordionSummary-root {
+// 			border: 0.063rem solid theme('colors.gray200');
+// 			background-color: theme('colors.gray100');
+// 			padding: 0.75rem 1.25rem;
+// 			margin: 0;
+// 			height: 2.875rem;
+// 			min-height: 2.875rem;
+// 			.MuiAccordionSummary-content {
+// 				margin: 0;
+// 				font-weight: 500;
+// 				font-size: 1rem;
+// 				line-height: 1;
+// 				color: theme('colors.gray500');
+// 				font-family: 'Poopins', sans-serif;
+// 			}
+// 			.MuiCollapse-root {
+// 				padding: 0;
+// 				background-color: theme('colors.white');
+// 			}
+// 		}
+// 		.css-15v22id-MuiAccordionDetails-root {
+// 			padding: 0 !important;
+// 		}
+// 	}
+// 	.custom-saleperson {
+// 		overflow-y: auto;
+// 	}
+// 	.custom-saleperson::-webkit-scrollbar {
+// 		display: none;
+// 	}
+// 	.custom-saleperson {
+// 		overflow-y: auto;
+// 	}
+// 	.custom-saleperson::-webkit-scrollbar {
+// 		display: none;
+// 	}
+
+// 	.pdf-container {
+// 		display: flex;
+// 		justify-content: center;
+// 		user-select: none;
+// 		width: 100%;
+// 		height: min-content !important;
+
+// 		.controls {
+// 			margin: 20px;
+// 		}
+// 		.pdf-page {
+// 			height: min-content !important;
+// 			canvas {
+// 				height: min-content !important;
+// 			}
+// 		}
+// 		.pdf-background-shadow {
+// 			box-shadow: 0px 0px 10px #888888;
+// 		}
+// 	}
+// 	.add-new {
+// 		background-color: theme('colors.indigo25');
+// 		border-color: theme('colors.indigo25');
+// 		color: theme('colors.primary');
+// 	}
+// 	.telemarketer-region-table {
+// 		.telemarketer-header {
+// 			border-top: 0.063rem solid theme('colors.lightgray50');
+// 			display: grid;
+// 			grid-template-columns: repeat(4, 1fr);
+// 			.telemarketer-head {
+// 				font-size: 1.125rem;
+// 				line-height: 1.688rem;
+// 				font-weight: 500;
+// 				color: theme('colors.gray700');
+// 				padding: 1.5rem 1.875rem;
+// 				border-right: 0.063rem solid theme('colors.lightgray50');
+// 				&:last-child {
+// 					border: 0;
+// 				}
+// 			}
+// 		}
+// 		.telemarketer-body {
+// 			.telemarketer-row {
+// 				display: grid;
+// 				grid-template-columns: repeat(4, 1fr);
+// 				background-color: theme('colors.primary50');
+// 				.telemarketer-cell {
+// 					font-size: 0.875rem;
+// 					line-height: 1.313rem;
+// 					font-weight: 400;
+// 					color: theme('colors.gray700');
+// 					padding: 1.5rem 1.875rem;
+// 					border-right: 0.063rem solid theme('colors.lightgray50');
+// 					&:last-child {
+// 						border: 0;
+// 					}
+// 					ul {
+// 						li {
+// 							padding-bottom: 1rem;
+// 							&:last-child {
+// 								padding-bottom: 0;
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.action-dropdown {
+// 		.MuiButtonBase-root {
+// 			width: 1.75rem;
+// 			min-width: 1.75rem;
+// 			height: 1.75rem;
+// 			background-color: white;
+// 			border: 0.063rem solid theme('colors.lightgray600');
+// 			border-radius: 0.25rem;
+// 			cursor: pointer;
+// 			img {
+// 				width: 0.781;
+// 				height: 0.156rem;
+// 			}
+// 		}
+// 	}
+// 	.icon-input-select {
+// 		height: 2.75rem;
+// 		width: 100%;
+// 		.MuiOutlinedInput-root {
+// 			&:hover {
+// 				.MuiOutlinedInput-notchedOutline {
+// 					border-color: theme('colors.gray300') !important;
+// 				}
+// 			}
+// 		}
+// 		.MuiOutlinedInput-root.Mui-focused {
+// 			.MuiOutlinedInput-notchedOutline {
+// 				border: 0.063rem;
+// 				border-color: theme('colors.primary') !important;
+// 				box-shadow: 0rem 0rem 0rem 0.063rem theme('colors.primary');
+// 			}
+// 		}
+// 		.MuiInputBase-root {
+// 			border-radius: 0.5rem;
+// 			.MuiInputBase-input {
+// 				padding: 0.625rem 0;
+// 				&:focus-visible {
+// 					outline: none;
+// 				}
+// 			}
+// 			&:focus-visible {
+// 				outline: none;
+// 			}
+// 		}
+// 		&:focus-visible {
+// 			outline: none;
+// 		}
+// 	}
+// 	.input-adorment {
+// 		.MuiFormControl-root {
+// 			height: 2.75rem;
+// 		}
+// 		.MuiInputBase-input {
+// 			border: 0.063rem solid theme('colors.gray300') !important;
+// 			border-radius: 0 0.5rem 0.5rem 0;
+// 			border-left: 0.063rem solid theme('colors.gray300') !important;
+// 			border-right: 0.063rem solid theme('colors.gray300') !important;
+// 			padding-left: 0.875rem !important;
+// 			color: theme('colors.gray900');
+// 		}
+// 	}
+// 	.edit-cancel-btn{
+// 		font-size: 1rem !important;
+// 		font-weight: 600 !important;
+// 		line-height: 1.5rem;
+// 		color: theme('colors.gray700') !important;
+// 		text-transform: capitalize !important;
+// 		height: 3rem;
+// 		border-radius: 0.5rem !important;
+// 		padding: 0.75rem 1.25rem !important;
+// 		border: 0.063rem solid theme('colors.gray300') !important;
+// 	}
+// 	.field-tab {
+// 		&:first-child {
+// 			border-radius: 0.375rem 0 0 0.375rem;
+// 			border-top: 0.063rem solid theme('colors.primary');
+// 			border-left: 0.063rem solid theme('colors.primary');
+// 			border-bottom: 0.063rem solid theme('colors.primary');
+// 		}
+// 		&:nth-child(even) {
+// 			border: 0.063rem solid theme('colors.primary');
+// 		}
+// 		&:last-child {
+// 			border-radius: 0 0.375rem 0.375rem 0;
+// 			border-top: 0.063rem solid theme('colors.primary');
+// 			border-right: 0.063rem solid theme('colors.primary');
+// 			border-bottom: 0.063rem solid theme('colors.primary');
+// 		}
+// 	}
+// 	.commission-tab {
+// 		&:first-child {
+// 			border-top-width: 0.063rem;
+// 			border-left-width: 0.063rem;
+// 			border-bottom-width: 0.063rem;
+// 		}
+// 		&:nth-child(even) {
+// 			border-top-width: 0.063rem;
+// 			border-left-width: 0.063rem;
+// 			border-right-width: 0.063rem;
+// 			border-bottom-width: 0.063rem;
+// 		}
+// 		&:last-child {
+// 			border-top-width: 0.063rem;
+// 			border-right-width: 0.063rem;
+// 			border-bottom-width: 0.063rem;
+// 		}
+// 	}
+// 	.commission-body {
+// 		height: calc(100vh - 11rem);
+// 		min-height: calc(100vh - 11rem);
+// 		overflow-y: auto;
+// 	}
+// 	.commission-body::-webkit-scrollbar {
+// 		display: none;
+// 	}
+// 	.commission-sales-body {
+// 		height: calc(100vh - 13.5rem);
+// 		min-height: calc(100vh - 13.5rem);
+// 		overflow-y: auto;
+// 	}
+// 	.commission-sales-body::-webkit-scrollbar {
+// 		display: none;
+// 	}
+// 	.inner-sales-body {
+// 		height: calc(100vh - 24rem);
+// 		min-height: calc(100vh - 24rem);
+// 		overflow-y: auto;
+// 	}
+// 	.inner-sales-body::-webkit-scrollbar {
+// 		display: none;
+// 	}
+// 	.action-dropdown {
+// 		.MuiButtonBase-root {
+// 			width: 1.75rem;
+// 			min-width: 1.75rem;
+// 			height: 1.75rem;
+// 			background-color: white;
+// 			border: 0.063rem solid theme('colors.lightgray600');
+// 			border-radius: 0.25rem;
+// 			cursor: pointer;
+// 			img {
+// 				width: 0.781;
+// 				height: 0.156rem;
+// 			}
+// 		}
+// 	}
+// 	.mui-cancel-btn.MuiButtonBase-root {
+// 		border: 0.063rem solid theme('colors.gray300');
+// 		border-radius: 0.5rem;
+// 		padding: 0.625rem 3.5rem;
+// 		font-size: 1rem;
+// 		font-weight: 600;
+// 		line-height: 1.5rem;
+// 		color: theme('colors.gray800');
+// 		background-color: white;
+// 		margin-right: 1.25rem;
+// 	}
+// 	.mui-save-btn.MuiButtonBase-root {
+// 		border: 0.063rem solid theme('colors.primary');
+// 		border-radius: 0.5rem;
+// 		padding: 0.625rem 3.5rem;
+// 		font-size: 1rem;
+// 		font-weight: 600;
+// 		line-height: 1.5rem;
+// 		color: white;
+// 		background-color: theme('colors.primary');
+// 	}
+// 	.upload-btn {
+// 		background-color: theme('colors.indigo25');
+// 		border-color: theme('colors.indigo25');
+// 		color: theme('colors.primary');
+// 	}
+// 	.dead-btn {
+// 		background-color: theme('colors.lightgreen100');
+// 		border-color: theme('colors.lightgreen100');
+// 		&:disabled {
+// 			background-color: theme('colors.lightgray50');
+// 			border-color: theme('colors.lightgray50');
+// 		}
+// 	}
+// 	.lead-edit-btn {
+// 		background-color: theme('colors.indigo25');
+// 		border-color: theme('colors.indigo25');
+// 		padding: 0.75rem 1.25rem;
+// 		color: theme('colors.primary');
+// 	}
+// 	.contact-call-btn {
+// 		background-color: theme('colors.lightgreen');
+// 		border-color: theme('colors.lightgreen');
+// 	}
+// 	.disconnect-btn {
+// 		background-color: theme('colors.Error500');
+// 		border-color: theme('colors.Error500');
+// 	}
+// 	.radio-accordian {
+// 		.MuiAccordionSummary-root {
+// 			height: 3.625rem;
+// 			background-color: theme('colors.lightblue300');
+// 			color: theme('colors.primary');
+// 			.MuiRadio-root {
+// 				color: theme('colors.primary');
+// 				.MuiSvgIcon-root{
+// 					color: theme('colors.primary');
+// 				}
+// 				&:checked{
+// 					color: theme('colors.primary');
+// 					.MuiTypography-root{
+// 						color: theme('colors.primary');
+// 					}
+// 				}
+// 			}
+// 			.Mui-checked {
+// 				.MuiTypography-root {
+// 					color: theme('colors.primary');
+// 				}
+// 			}
+// 		}
+// 		.MuiAccordionSummary-root {
+// 			position: relative;
+// 			&::before {
+// 				content: '';
+// 				position: absolute;
+// 				top: 0;
+// 				left: 0;
+// 				height: 100%;
+// 				width: 0.313rem;
+// 				background-color: theme('colors.primary');
+// 			}
+// 		}
+// 	}
+// 	.install-datepicker{
+// 		.MuiTextField-root {
+// 			width: 9.438rem;
+// 			height: 2.25rem;
+// 			.MuiInputLabel-root {
+// 				font-size: 0.8rem;
+// 				line-height: 1.313rem;
+// 				color: theme('colors.primary');
+// 			}
+// 			.MuiInputBase-root {
+// 				background-color: theme('colors.lightblue300');
+// 				.MuiOutlinedInput-input {
+// 					padding: 0.44rem  0.875rem 0.5rem 0.875rem;
+// 					font-size: 0.875rem;
+// 					color: theme('colors.primary');
+// 				}
+// 				.MuiOutlinedInput-notchedOutline 
+// 					{
+// 						border-color: theme('colors.primary');
+
+// 					}
+// 					.MuiButtonBase-root{
+//                      color: theme('colors.primary');
+// 					}
+// 				&:hover {
+// 					.MuiOutlinedInput-notchedOutline {
+// 						border-color: theme('colors.primary');
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.scheduled-btn{
+// 		padding: 0.5rem 0.875rem;
+// 		height: 2.25rem;
+//    }
+// 	.sales-diary-weekdays{
+// 		.appointment-header{
+// 			background-color: white;
+// 			border-top: 0.063rem solid theme('colors.gray200');
+// 			border-bottom: 0.063rem solid theme('colors.gray200');
+// 		}
+// 		.appointment-col{
+// 			text-align: center;
+// 			padding: 0.625rem 0;
+// 			font-size: 0.75rem;
+// 			line-height: 1.125rem;
+// 			font-weight: 600;
+// 			color: theme('colors.gray700');
+// 		}
+// 		.appointment-body{
+// 			.appointment-row{
+// 				background-color: theme('colors.lightblue300');
+// 				.appointment-cell{
+// 					padding: 0.625rem;
+// 					display: flex;
+// 					flex-direction: column;
+// 					gap: 0.625rem;
+// 				}
+// 			}
+// 		}
+// 	}	
+// 	.modal-box{
+// 		.select-data-modal{
+// 			box-shadow: none;
+// 			width: 30rem;
+// 			padding: 1.25rem;
+// 		}
+// 		.delete-modal{
+// 			box-shadow: none;
+// 			width: 25rem;
+// 			padding: 1.5rem;
+// 		}
+// 	}
+// 	.detail-btn{
+// 		border-color: theme('colors.gray300');
+// 		color: theme('colors.gray700');
+// 	}
+// 	.remove-list{
+// 		background-color: theme('colors.lightred50');
+// 		border-color: theme('colors.lightred50');
+// 		color: theme('colors.Error700');
+// 		padding: 0.625rem  1.25rem;
+// 	}
+// 	.engineer-datepicker {
+// 		.MuiTextField-root {
+// 			width: 100%;
+// 			.MuiInputLabel-root {
+// 				font-size: 0.8rem;
+// 				line-height: 2em;
+// 			}
+// 			.MuiInputBase-root {
+// 				.MuiOutlinedInput-input {
+// 					padding: 0.7rem 0.875rem;
+// 					font-size: 0.8rem;
+// 					color: theme('colors.gray500');
+// 				}
+// 				&:hover {
+// 					.MuiOutlinedInput-notchedOutline {
+// 						border-color: theme('colors.gray50');
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.meeting-notes{
+// 		li{
+//          color: theme('colors.gray500');
+// 		 padding-bottom: 1rem;
+// 		}
+// 	}
+// 	.meeting-date{
+// 		.MuiTextField-root {
+// 			width: 100%;
+// 		}
+// 	}
+// }
+
+// /* Foucs background while drag n drop */
+// .dragging-over {
+// 	background-color: theme('colors.lightgray50');
+// } 
+// /* Custom scrollbar styles */
+// .scrollable-container::-webkit-scrollbar {
+// 	width: 0.30rem;
+// }
+// .scrollable-container::-webkit-scrollbar-track {
+// 	background: #f1f1f1;
+// }
+// .scrollable-container::-webkit-scrollbar-thumb {
+// 	background: #888;
+// }
+// .scrollable-container::-webkit-scrollbar-thumb:hover {
+// 	background: #555;
+// 	.customer-table{
+// 		.MuiDataGrid-main{
+// 			height: calc(100vh - 19.375rem);
+// 			min-height: calc(100vh - 19.375rem);
+// 			overflow-y: auto;
+// 		}
+// 	}
+// 	.work-rate-box{
+// 		height: calc(100vh - 14.5rem);
+// 		min-height: calc(100vh - 14.5rem);
+// 		overflow-y: auto;
+// 		.work-rate-table{
+// 			.MuiDataGrid-main{
+// 				height: calc(100vh - 19.375rem);
+// 				min-height: calc(100vh - 19.375rem);
+// 				overflow-y: auto;
+// 			}
+// 		}
+// 	}
+// 	.flag-bad-model{
+// 		.modal-body{
+// 			height: calc(100vh - 19.375rem);
+// 				min-height: calc(100vh - 19.375rem);
+// 				overflow-y: auto;
+// 		}
+// 		.modal-body::-webkit-scrollbar {
+// 			width: 0.30rem;
+// 		}
+// 		.modal-body::-webkit-scrollbar-track {
+// 			background: #f1f1f1;
+// 		}
+// 		.modal-body::-webkit-scrollbar-thumb {
+// 			background: #888;
+// 		}
+// 		.modal-body::-webkit-scrollbar-thumb:hover {
+// 			background: #555;
+// 		}
+// 	}
+// 	.setting-lead-table{
+// 		.MuiDataGrid-columnHeaders{
+// 			background-color: theme('colors.gray100');
+// 			.MuiDataGrid-columnHeaderTitle{
+// 				color: theme('colors.gray500') !important;
+// 			}
+// 		}
+// 	}
+// 	.add-lead-modal{
+// 		.MuiDialog-paper{
+// 			border-radius: 1rem;
+// 			max-width: 30rem;
+// 		}
+// 	}
+// }
+// .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+// 	margin-top: 0.5rem;
+// 	margin-right: 8rem;
+// 	width: 7.5rem;
+// 	background-color: white;
+// 	border-radius: 0.5rem;
+// 	.MuiList-root {
+// 		padding: 0 !important;
+// 		.MuiMenuItem-root {
+// 			padding: 0.625rem;
+// 			border-bottom: 0.063rem solid theme('colors.gray100');
+// 		}
+// 	}
+// }
+
+// /* Custom scrollbar styles*/
+// body ::-webkit-scrollbar {
+// 	width: 0.30rem;
+// }
+// body ::-webkit-scrollbar-track {
+// 	background: #f1f1f1;
+// }
+// body ::-webkit-scrollbar-thumb {
+// 	background: #888;
+// }
+// body ::-webkit-scrollbar-thumb:hover {
+// 	background: #555;
+// }
